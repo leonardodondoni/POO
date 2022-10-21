@@ -11,6 +11,11 @@ public class Esfera {
             raio = 1;
     }
 
+    public double getRaio() {
+        return raio;
+    }
+    
+
     public double volume() {
         volume = 4 / 3.0 * Math.PI * Math.pow(raio, 3);
         return volume;
