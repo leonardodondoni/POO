@@ -14,15 +14,21 @@ public class Esfera {
     public double getRaio() {
         return raio;
     }
-    
+
+    public void setRaio(double novoRaio) {
+        if (novoRaio > 0)
+            raio = novoRaio;
+    }
+
+    public String toString() {
+        return "Raio: " + raio;
+    }
 
     public double volume() {
-        volume = 4 / 3.0 * Math.PI * Math.pow(raio, 3);
-        return volume;
+      return 4 / 3.0 * Math.PI * Math.pow(raio, 3);
     }
 
     public double area() {
-        area = 4 * Math.PI * Math.pow(raio, 2);
-        return area;
+        return 4 * Math.PI * Math.pow(raio, 2);
     }
 }
