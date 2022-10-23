@@ -19,7 +19,7 @@ public class AppGarrafa {
 
         Garrafa garrafa = new Garrafa(raio1, raio2, altura1, altura2, altura3);
 
-        System.out.println(garrafa.volume());
+        System.out.println(garrafa.toString());
 
     }
 }

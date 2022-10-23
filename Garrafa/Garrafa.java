@@ -50,5 +50,8 @@ public class Garrafa {
     public double volume(){
         return (Math.PI * raio2 * altura1) + (Math.PI * ((Math.pow(raio2,2) + raio1 * raio2 + Math.pow(raio2,2) * altura1 / 3)));
     }
+    public String toString(){
+        return "Raio 1: " + raio1 + "\nRaio 2: " + raio2 + "\nAltura 1: " + altura1 + "\nAltura 2: " + altura2 + "\nAltura 3: " + altura3 + "\nVolume: " + volume();
+    }
 }
     
