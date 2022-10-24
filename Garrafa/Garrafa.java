@@ -2,11 +2,11 @@ package Garrafa;
 
 public class Garrafa {
     
-    private double raio1, raio2, altura1, altura2,altura3;
+    private double raio1, raio2, altura1, altura2, altura3;
 
     public Garrafa(double raio1Inicial, double raio2Inicial, double altura1Inicial, double altura2Inicial, double altura3Inicial){
         if(raio1Inicial > 0) raio1 = raio1Inicial;
-        else raio1 = 1;
+        else raio1 = 2;
         if(raio2Inicial > 0) raio2= raio2Inicial;
         else raio2 = 1;
         if(altura1Inicial > 0) altura1 = altura1Inicial;
@@ -48,7 +48,10 @@ public class Garrafa {
         if(novaAltura3 > 0) altura3 = novaAltura3;
     }
     public double volume(){
-        return (Math.PI * raio2 * altura1) + (Math.PI * ((Math.pow(raio2,2) + raio1 * raio2 + Math.pow(raio2,2) * altura1 / 3)));
+       double cilindro1 = Math.PI * Math.pow(raio1, 2) * altura1;
+       double cilindro2 = Math.PI * Math.pow(raio2,2) * altura2;
+       double cone = Math.PI * (Math.pow(raio1, 2) + raio1 * raio2 + Math.pow(raio2, 2)* altura3 / 3);
+       return cilindro1 + cilindro2 + cone;
     }
     public String toString(){
         return "Raio 1: " + raio1 + "\nRaio 2: " + raio2 + "\nAltura 1: " + altura1 + "\nAltura 2: " + altura2 + "\nAltura 3: " + altura3 + "\nVolume: " + volume();
