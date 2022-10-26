@@ -99,8 +99,9 @@ public class Carro {
     }
 
     public String toString() {
-        return placa + " " + marca + " " + modelo + " " + cor + " " + kilometragem + " " + capacidadeTanque + " "
-                + quantidadeTanque + " " + consumoMedio;
+        return "Placa: " + placa + "\nMarca: " + marca + "\nModelo: " + modelo + "\nCor: " + cor + "\nKilometragem: "
+                + kilometragem + "\nCapacidade do tanque: " + capacidadeTanque + "\nQuantidade de gasolina no tanque: "
+                + quantidadeTanque + "\nConsumo médio:" + consumoMedio;
     }
 
     public void abastecerLitros(int litrosAbastecidos) {
