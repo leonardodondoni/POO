@@ -3,9 +3,10 @@ package Paciente;
 public class Paciente {
 
     private String nome, sexo;
-    private int peso, altura, idade;
+    private double peso;
+    private int altura, idade;
 
-    public Paciente(String nomeInicial, String sexoInicial, int pesoInicial, int alturaInicial, int idadeInicial) {
+    public Paciente(String nomeInicial, String sexoInicial, double pesoInicial, int alturaInicial, int idadeInicial) {
         if (nomeInicial == "" || nomeInicial == null)
             throw new IllegalArgumentException("Nome não pode ser nulo");
         nome = nomeInicial;
@@ -31,7 +32,7 @@ public class Paciente {
         return sexo;
     }
 
-    public int getPeso() {
+    public double getPeso() {
         return peso;
     }
 
@@ -55,7 +56,7 @@ public class Paciente {
         sexo = novoSexo;
     }
 
-    public void setPeso(int novoPeso) {
+    public void setPeso(double novoPeso) {
         if (novoPeso <= 0 || novoPeso > 150)
             throw new IllegalArgumentException("Peso deve ser maior que 0 e menor que 150 kg");
         peso = novoPeso;
@@ -74,15 +75,17 @@ public class Paciente {
     }
 
     public double imc() {
-        return peso / Math.pow(altura, 2);
+        double alturaEmMetros = altura / 100.0;
+        return peso / Math.pow(alturaEmMetros, 2);
     }
 
     public double pesoIdeal() {
         double aux = 0;
+        double alturaEmMetros = altura / 100.0;
         if (sexo == "M") {
-            aux = 72.7 * altura - 58.0;
+            aux = 72.7 * alturaEmMetros - 58.0;
         } else
-            aux = 62.1 * altura - 44.7;
+            aux = 62.1 * alturaEmMetros - 44.7;
         return aux;
     }
 
