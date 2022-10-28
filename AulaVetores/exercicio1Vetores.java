@@ -11,12 +11,12 @@ public class exercicio1Vetores {
 
         int[] num = new int[10];
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < num.length; i++) {
             num[i] = random.nextInt(21);
             System.out.println("Indíce: " + i + " Valor: " + num[i]);
         }
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < num.length; i++) {
             if (num[i] % 2 != 0) {
                 System.out.println("Valores ímpares de A: " + num[i]);
             }
@@ -27,7 +27,7 @@ public class exercicio1Vetores {
                 System.out.println("Valor ímpares de A em posições pares: " + num[i]);
             }
         }
-        for (int i = 9; i > -1; i--) {
+        for (int i = num.length - 1; i > -1; i--) {
                 System.out.println("Indice: " + i + " Valor: " + num[i]);
         }
     }
