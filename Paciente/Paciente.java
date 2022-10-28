@@ -10,9 +10,9 @@ public class Paciente {
         if (nomeInicial == "" || nomeInicial == null)
             throw new IllegalArgumentException("Nome não pode ser nulo");
         nome = nomeInicial;
-        if (sexoInicial != "F" || sexoInicial != "M")
-            throw new IllegalArgumentException("Sexo deve ser M ou F");
-        sexo = sexoInicial;
+        if (sexoInicial.equalsIgnoreCase("M") || sexoInicial.equalsIgnoreCase("F"))
+            sexo = sexoInicial;
+            else throw new IllegalArgumentException("Sexo deve ser M ou F");
         if (pesoInicial <= 0 || pesoInicial > 150)
             throw new IllegalArgumentException("Peso deve ser maior que 0 e menor que 150 kg");
         peso = pesoInicial;
@@ -102,5 +102,9 @@ public class Paciente {
         else
             aux = "obesidade mórbida";
         return aux;
+    }
+    
+    public String toString() {
+        return "Nome: " + nome + "\nSexo: " + sexo + "\nPeso: " + peso + "\nAltura: " + altura + "\nIdade: " + idade + "\nIMC: " + imc() + "\nPeso ideal: " + pesoIdeal() + "\nFaixa de risco: " + faixaDeRisco();
     }
 }

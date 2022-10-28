@@ -26,6 +26,9 @@ public class AppPaciente {
             System.out.println(paciente.imc());
             System.out.println(paciente.pesoIdeal());
             System.out.println(paciente.faixaDeRisco());
+
+            System.out.println(paciente.toString());
+            
             
 
         }
