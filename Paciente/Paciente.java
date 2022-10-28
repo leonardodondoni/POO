@@ -51,9 +51,9 @@ public class Paciente {
     }
 
     public void setSexo(String novoSexo) {
-        if (novoSexo != "F" || novoSexo != "M")
-            throw new IllegalArgumentException("Sexo deve ser M ou F");
-        sexo = novoSexo;
+        if (novoSexo.equalsIgnoreCase("M") || novoSexo.equalsIgnoreCase("F"))
+            sexo = novoSexo;
+            else throw new IllegalArgumentException("Sexo deve ser M ou F");
     }
 
     public void setPeso(double novoPeso) {
