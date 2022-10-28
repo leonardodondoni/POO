@@ -12,8 +12,8 @@ public class exercicio1Vetores {
         int[] num = new int[10];
 
         for (int i = 0; i < 10; i++) {
-            System.out.println("Informe os valores do vetor A: ");
             num[i] = random.nextInt(5000);
+            System.out.println("Valores do vetor A: " + num[i]);
         }
 
         for (int i = 0; i < 10; i++) {
@@ -27,7 +27,7 @@ public class exercicio1Vetores {
                 System.out.println("Valor ímpares de A em posições pares: " + num[i]);
             }
         }
-        for (int i = 9; i > 0; i--) {
+        for (int i = 9; i > -1; i--) {
                 System.out.println("Invertido: " + num[i]);
         }
     }
