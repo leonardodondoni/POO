@@ -41,4 +41,42 @@ public class ListaDeInteiros {
         }
         return msg;
     }
+
+    public int sumOfNumbers() {
+        int sum = 0;
+        for (int i = 0; i < list.length; i++) {
+            sum += list[i];
+        }
+        return sum;
+    }
+
+    public int averageOfNumbers() {
+        int average = 0;
+        for (int i = 0; i < list.length; i++) {
+            average += list[i] / list.length;
+        }
+        return average;
+    }
+
+    public int highestNumber() {
+        int highestNumber = Integer.MIN_VALUE;
+        for (int i = 0; i < list.length; i++) {
+            if(list[i] > highestNumber) highestNumber = list[i];
+    }
+
+    public int evenQuantity() {
+        int evenQuantity = 0;
+        for (int i = 0; i < list.length; i++) {
+            if(list[i] % 2 == 0) evenQuantity++;
+        }
+        return evenQuantity;
+    }
+    public int invertList() {
+        int[] invertList;
+        for (int i = list.length; i > -1; i--) {
+            invertList = new int[];
+            
+            }
+        }
+    }
 }
