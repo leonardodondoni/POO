@@ -6,5 +6,6 @@ public class AppListaDeInteiros {
         ListaDeInteiros numbers = new ListaDeInteiros(5);
         numbers.fillRandomNumbers();
         System.out.println("\fValores iniciais: " + numbers.toString());
+        
     }
 }
