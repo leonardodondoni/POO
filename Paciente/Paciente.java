@@ -105,6 +105,6 @@ public class Paciente {
     }
     
     public String toString() {
-        return "Nome: " + nome + "\nSexo: " + sexo + "\nPeso: " + peso + "\nAltura: " + altura + "\nIdade: " + idade + "\nIMC: " + imc() + "\nPeso ideal: " + pesoIdeal() + "\nFaixa de risco: " + faixaDeRisco();
+        return "Nome: " + nome + "\nSexo: " + sexo + "\nPeso: " + peso + "\nAltura: " + altura / 100.0 + "\nIdade: " + idade + "\nIMC: " + imc() + "\nPeso ideal: " + pesoIdeal() + "\nFaixa de risco: " + faixaDeRisco();
     }
 }
