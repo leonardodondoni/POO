@@ -50,8 +50,8 @@ public class ListaDeInteiros {
         return sum;
     }
 
-    public int averageOfNumbers() {
-        int average = 0;
+    public double averageOfNumbers() {
+        double average = 0;
         int aux = 0;
         for (int i = 0; i < list.length; i++) {
             aux += list[i];
@@ -78,14 +78,28 @@ public class ListaDeInteiros {
         return evenQuantity;
     }
 
-    public int[] invertList() {
+    public void invertList() {
         int[] invertList = new int[list.length];
-        for (int i = list.length; i > -1; i--) {
-            for (int j = 0; j < list.length; i++) {
-                list[j] = list[i];
-            }
+        int j = list.length - 1;
+        for (int i = 0; i < list.length; i++) {
+            invertList[i] = list[j];
+            j--;
         }
-        return invertList;
+        for (int i = 0; i < list.length; i++) {
+            list[i] = invertList[i];
+        }
+    }
+
+    public void invertListUpgrade() {
+        int j = list.length - 1;
+        int aux;
+        int limit = list.length / 2;
+        for (int i = 0; i < list.length; i++) {
+            aux = list[i];
+            list[i] = list[j];
+            list[j] = aux;
+            j--;
+        }
     }
 
     public int[] sortList() {
