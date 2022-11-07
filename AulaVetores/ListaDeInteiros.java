@@ -180,7 +180,7 @@ public class ListaDeInteiros {
 
     public int[] modaList() {
         for (int i = 0; i < list.length; i++) {
-
+            
         }
     }
 }
