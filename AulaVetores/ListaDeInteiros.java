@@ -3,18 +3,23 @@ package AulaVetores;
 import java.util.Random;
 
 /*a) Cria a lista de inteiros com um tamanho informado por parametro
-  b) Preencher a lista com valores aleatórios ok
-  c) Devolver a soma dos elementos da lista ok
-  d) Devolver a media dos elementos da lista ok
-  e) Encontrar o maior valor da lista ok
-  f) Quantidade de valores pares existentes na lista ok
-  e) Inverte a lista(numeros nao print) ok
-  i) Coloca os valores da lista em ordem crescente ok
-  j) Verifica se um valor esta na lista ok
-  k) SUbstitui um valor da lista por outro ok
-  l) QUantidade de valores primos existentes na lista ok
-  m) Devolve os valores impares da lista ok
+  b) Preencher a lista com valores aleatórios OK
+  c) Devolver a soma dos elementos da lista OK
+  d) Devolver a media dos elementos da lista OK
+  e) Encontrar o maior valor da lista OK
+  f) Quantidade de valores pares existentes na lista OK
+  e) Inverte a lista(numeros nao print) OK
+  i) Coloca os valores da lista em ordem crescente OK
+  j) Verifica se um valor esta na lista OK
+  k) SUbstitui um valor da lista por outro OK
+  l) QUantidade de valores primos existentes na lista OK
+  m) Devolve os valores impares da lista 
   n) Devolve os valores primos da lista
+  o) Devolve os valores distintos (sem repetiçao) --FAZER
+  p) Devolve os n maiores valores (n eh parametro) -- FAZER
+  r) Calcula a moda dos elementos  -- FAZER
+  s) Calcula a mediana dos elementos -- FAZER
+  t) Organiza o vetor colocando os pares no inicio e os impares no final --FAZER
    */
 
 public class ListaDeInteiros {
@@ -51,17 +56,11 @@ public class ListaDeInteiros {
     }
 
     public double averageOfNumbers() {
-        double average = 0;
-        int aux = 0;
-        for (int i = 0; i < list.length; i++) {
-            aux += list[i];
-        }
-        average = aux / list.length;
-        return average;
+        return (double) sumOfNumbers() / list.length;
     }
 
     public int highestNumber() {
-        int highestNumber = Integer.MIN_VALUE;
+        int highestNumber = list[0];
         for (int i = 0; i < list.length; i++) {
             if (list[i] > highestNumber)
                 highestNumber = list[i];
@@ -102,15 +101,19 @@ public class ListaDeInteiros {
         }
     }
 
-    public int[] sortList() {
-        for (int i = 0; i < list.length; i++) {
-            int j = i;
-            while (j > 0 && list[j - 1] > list[j]) {
-                list[j] = list[j - 1];
-                j--;
+    public void sortList() {
+        int aux;
+        // 3 < 3
+        for (int i = 0; i < list.length - 1; i++) {
+            // 3< 3
+            for (int j = 0; j < list.length - 1 - i; j++) {
+                if (list[j] > list[j + 1]) {
+                    aux = list[j]; // 10
+                    list[j] = list[j + 1];
+                    list[j + 1] = aux;
+                }
             }
         }
-        return list;
     }
 
     public boolean checkNumber(int number) {
@@ -121,24 +124,22 @@ public class ListaDeInteiros {
         return false;
     }
 
-    public void replaceNumber(int number, int index) {
+    public int replaceNumber(int index, int number) {
         for (int i = 0; i < list.length; i++) {
-            if (i == index) {
-                list[i] = number;
+            if (index >= 0 && index < list.length) {
+                int aux = list[index];
+                list[index] = number;
+                return aux;
             }
         }
+        return -1;
     }
 
     public int primeQuantity() {
         int primeQuantity = 0;
-        int aux = 0;
         for (int i = 0; i < list.length; i++) {
-            if (list[i] % i == 0)
-                aux++;
-            if (aux == 2) {
+            if (Operations.primo(list[i]) == true)
                 primeQuantity++;
-                aux = 0;
-            }
         }
         return primeQuantity;
     }
@@ -152,33 +153,34 @@ public class ListaDeInteiros {
             }
         }
         oddList = new int[oddListSize];
+        int j = 0;
         for (int i = 0; i < oddListSize; i++) {
             if (list[i] % 2 != 0) {
-                oddList[i] = list[i];
+                oddList[j] = list[i];
+                j++;
             }
         }
         return oddList;
     }
 
     public int[] primeList() {
-        int[] primeList;
-        int primeListSize = 0;
-        int aux = 0;
-        for (int i = 0; i < list.length; i++) {
-            if (list[i] % i == 0) {
-                aux++;
-            }
-            if (aux == 2) {
-                primeListSize++;
-                aux = 0;
-            }
-        }
-        primeList = new int[primeListSize];
-        for (int i = 0; i < primeListSize; i++) {
-            if (list[i] % i == 0) {
-                primeList[i] = list[i];
+        int primeListSize = primeQuantity();
+        if (primeListSize == 0)
+            return null;
+        int[] primeList = new int[primeListSize];
+        int j = 0;
+        for (int i = 0; i < primeList.length; i++) {
+            if (Operations.primo(list[i]) == true) {
+                primeList[j] = list[i];
+                j++;
             }
         }
         return primeList;
+    }
+
+    public int[] modaList() {
+        for (int i = 0; i < list.length; i++) {
+
+        }
     }
 }
